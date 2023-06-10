@@ -1,5 +1,11 @@
+import { Header } from './components/header/Header'
+
 function App() {
-  return <h1 className="font-bold">Tech unicorn</h1>
+  return (
+    <div>
+      <Header />
+    </div>
+  )
 }
 
 export default App
