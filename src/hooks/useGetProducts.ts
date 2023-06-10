@@ -1,23 +1,16 @@
 import { useEffect, useState } from 'react'
 import { Product } from '../model/Product'
+import { useSearchParams } from 'react-router-dom'
 
-interface Props {
-  search?: string
-  category?: string
-  page?: number
-  limit?: number
-  sort?: 'asc' | 'desc'
-}
-
-export const useGetProducts = ({
-  search,
-  category,
-  page = 1,
-  sort = 'asc',
-  limit,
-}: Props) => {
+export const useGetProducts = () => {
+  const [searchParams] = useSearchParams();
   const [products, setProducts] = useState<Product[]>([])
   const [error, setError] = useState('')
+
+  const category = searchParams.get('category')
+  const search = searchParams.get('search')
+  const page = searchParams.get('page')
+  const limit = searchParams.get('limit')
 
   const handleGetProductsInCategory = async (category: string) => {
     try {
