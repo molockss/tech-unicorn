@@ -1,5 +1,5 @@
 function App() {
-  return <div>Tech unicorn</div>
+  return <h1 className="font-bold">Tech unicorn</h1>
 }
 
 export default App
