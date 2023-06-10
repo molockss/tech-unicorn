@@ -5,6 +5,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'sans': ['DM Sans']
+    },
     extend: {
       colors: {
         primary: '#F86338'
